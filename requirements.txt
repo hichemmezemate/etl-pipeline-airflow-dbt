@@ -1,0 +1,15 @@
+# Core Data Stack
+dbt-postgres>=1.8.0
+requests>=2.31.0
+psycopg2-binary>=2.9.9
+pandas>=2.0.0,<3.0.0
+sqlalchemy>=1.4.40,<2.0.0
+streamlit>=1.30.0
+plotly>=5.20.0
+pytest>=8.0.0
+python-dotenv>=1.0.0
+
+
+# Airflow (Exécuté dans le conteneur Docker python3.11 ou optionnel en dev local)
+# apache-airflow>=2.10.0
+
