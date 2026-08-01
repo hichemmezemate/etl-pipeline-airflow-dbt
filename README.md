@@ -2,7 +2,8 @@
 
 Projet complet de Data Engineering illustrant la construction d'un pipeline de données robuste de bout en bout :
 
-Ingestion d'une **API publique REST (Open-Meteo)** ➔ Ingestion dans **PostgreSQL** (`raw`) ➔ Transformations SQL structurées avec **dbt (data build tool)** ➔ Data Quality & Testing ➔ Orchestration automatisée avec **Apache Airflow** ➔ Restitution visuelle sur **Streamlit**.
+Ingestion d'une **API publique REST (Open-Meteo)** -> Ingestion dans **PostgreSQL** (`raw`) -> Transformations SQL structurées avec **dbt (data build tool)** -> Data Quality & Testing -> Orchestration automatisée avec **Apache Airflow** -> Restitution visuelle sur **Streamlit**.
+
 
 ---
 
