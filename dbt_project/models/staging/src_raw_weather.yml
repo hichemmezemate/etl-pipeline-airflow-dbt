@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw_sources
+    database: weather_dwh
+    schema: raw
+    tables:
+      - name: weather_observations
+        description: "Table d'ingestion brute contenant les métriques Open-Meteo parsées et payloads JSON."
+        columns:
+          - name: city_name
+            description: "Nom de la ville observée."
+          - name: observation_time
+            description: "Horodatage de l'observation météo."
+          - name: temperature_2m
+            description: "Température mesurée à 2 mètres (°C)."

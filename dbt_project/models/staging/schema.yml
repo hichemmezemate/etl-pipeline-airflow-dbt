@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_weather_observations
+    description: "Modèle de staging dédupliqué et nettoyé des observations météo."
+    columns:
+      - name: observation_id
+        description: "Clé primaire synthétique (MD5)."
+        tests:
+          - unique
+          - not_null
+      - name: city_name
+        description: "Nom de la ville."
+        tests:
+          - not_null
+      - name: observation_time
+        description: "Horodatage de la mesure."
+        tests:
+          - not_null
+      - name: temperature_celsius
+        description: "Température à 2 mètres."
+        tests:
+          - not_null

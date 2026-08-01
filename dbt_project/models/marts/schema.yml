@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: dim_cities
+    description: "Table de dimension recensant les villes suivies dans le DWH."
+    columns:
+      - name: city_key
+        description: "Clé primaire de la dimension ville."
+        tests:
+          - unique
+          - not_null
+      - name: city_name
+        description: "Nom de la ville."
+        tests:
+          - not_null
+
+  - name: fact_weather_observations
+    description: "Table de faits horodatée contenant chaque mesure météo."
+    columns:
+      - name: fact_weather_key
+        description: "Clé primaire de la table de faits."
+        tests:
+          - unique
+          - not_null
+      - name: city_key
+        description: "Clé étrangère vers la dimension dim_cities."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cities')
+              field: city_key
+      - name: temperature_celsius
+        description: "Température enregistrée à 2 mètres."
+        tests:
+          - not_null
+
+  - name: mart_daily_weather_summary
+    description: "Data Mart des métriques quotidiennes agrégées par ville."
+    columns:
+      - name: daily_summary_key
+        description: "Clé unique de l'agrégation quotidienne."
+        tests:
+          - unique
+          - not_null
+      - name: min_temperature_celsius
+        description: "Température minimale de la journée."
+        tests:
+          - not_null
+      - name: max_temperature_celsius
+        description: "Température maximale de la journée."
+        tests:
+          - not_null
